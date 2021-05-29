@@ -1,5 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import React from "react";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,19 +14,29 @@ import {
 } from "react-router-dom";
 import FeaturedProperties from './components/FeaturedProperties/FeaturedProperties';
 import FeaturedPropertiesDetailShow from './components/FeturedPropertiesDetailShow/FeaturedPropertiesDetailShow';
+import AboutUs from "./components/Home/AboutUs/AboutUs";
+import ExploreByCities from "./components/Home/ExploreByCities/ExploreByCities";
+import Home from "./components/Home/Home/Home";
+import NoMatch from "./components/Home/NoMatch/NoMatch";
+
+
 
 function App() {
   return (
     <Router>
-    <Switch> 
-       <Route exact path="/">
-        <FeaturedProperties></FeaturedProperties>
-       </Route>
-       <Route exact path="/apartment/feature/:id">
-        <FeaturedPropertiesDetailShow></FeaturedPropertiesDetailShow>
-       </Route>
-    </Switch>
-  </Router>
+        <Switch>
+        <Route exact path="/">
+          <Home></Home>
+        </Route>
+        <Route path="/home">
+          <Home></Home>
+        </Route>
+        <Route path="*">
+            <NoMatch></NoMatch>
+         </Route>
+      </Switch>
+    </Router>
+
   );
 }
 
