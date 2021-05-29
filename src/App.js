@@ -1,21 +1,34 @@
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import React from "react";
 import {
   BrowserRouter as Router,
-  Route, Switch
+  Switch,
+  Route,
+  Link
 } from "react-router-dom";
+import AboutUs from "./components/Home/AboutUs/AboutUs";
+import ExploreByCities from "./components/Home/ExploreByCities/ExploreByCities";
 import Home from "./components/Home/Home/Home";
+import NoMatch from "./components/Home/NoMatch/NoMatch";
+
 
 function App() {
   return (
     <Router>
-      <div>
         <Switch>
-          <Route path="/">
-            <Home/>
-          </Route>
-        </Switch>
-      </div>
+        <Route exact path="/">
+          <Home></Home>
+        </Route>
+        <Route path="/home">
+          <Home></Home>
+        </Route>
+        <Route path="*">
+            <NoMatch></NoMatch>
+         </Route>
+      </Switch>
+
     </Router>
   );
 }
