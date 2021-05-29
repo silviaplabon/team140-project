@@ -1,3 +1,6 @@
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -10,10 +13,11 @@ import ExploreByCities from "./components/Home/ExploreByCities/ExploreByCities";
 import Home from "./components/Home/Home/Home";
 import NoMatch from "./components/Home/NoMatch/NoMatch";
 
+
 function App() {
   return (
     <Router>
-      <Switch>
+        <Switch>
         <Route exact path="/">
           <Home></Home>
         </Route>
@@ -22,8 +26,9 @@ function App() {
         </Route>
         <Route path="*">
             <NoMatch></NoMatch>
-          </Route>
+         </Route>
       </Switch>
+
     </Router>
   );
 }
